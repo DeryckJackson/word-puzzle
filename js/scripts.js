@@ -14,6 +14,7 @@ const replaceVowels = (str) => {
   }
 
   newString = newStrArray.join(" ");
+  newString = newString.charAt(0).toUpperCase() + newString.slice(1);
 
   return newString
 }
@@ -24,6 +25,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     const strInput = $("#sentence").val();
+
+    $("form").hide();
 
     $("#output").append(replaceVowels(strInput));
 
